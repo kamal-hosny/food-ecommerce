@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Error from "./pages/error/Error";
 import ProductDetails from "./pages/productDetails/ProductDetails";
+import { Provider } from "react-redux";
+import { Store } from "./reduxToolkit/store/store";
 
 
 const App = () => {
@@ -44,7 +46,9 @@ const App = () => {
   return (
     <>
       <MobileHandlerProvider>
-        {isLoading ? (<LoadingPage />) : (<RouterProvider router={Routing} />)}
+        <Provider store={Store}>
+          {isLoading ? (<LoadingPage />) : (<RouterProvider router={Routing} />)}
+        </Provider>
       </MobileHandlerProvider>
     </>
   );

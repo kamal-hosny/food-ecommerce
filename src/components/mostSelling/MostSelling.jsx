@@ -6,7 +6,8 @@ import { useContext } from "react";
 import { MobileHandlerContext } from "../../utils/mobileHandler";
 
 
-const MostSelling = () => {
+const MostSelling = ({ productData }) => {
+  // console.log(productData.data);
   const { isMobile } = useContext(MobileHandlerContext)
   return (
     <section className="mostSelling">
@@ -16,7 +17,7 @@ const MostSelling = () => {
         spaceBetween={40}
         loop={false}
         modules={[Navigation, Scrollbar]}
-        navigation={{ nextEl: ".right-arrow" , prevEl: ".left-arrow"}}
+        navigation={{ nextEl: ".right-arrow", prevEl: ".left-arrow" }}
         scrollbar={{
           el: ".swiper--progress" 
         }}
@@ -38,24 +39,12 @@ const MostSelling = () => {
           },
         }}
       >
-        <SwiperSlide>
-          <Card />
+        {productData?.data?.map((data, _id) => (
+          data?.attributes?.most_selling &&
+          <SwiperSlide key={_id}>
+          <Card productData={data?.attributes} />
         </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
+        ))}
       </Swiper>
       <div className="swiper--option">
         <div className="swiper--progress"></div>

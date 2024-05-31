@@ -14,7 +14,7 @@ const About = () => {
         <HeadLines title={"About Us"} subtitle={"our journey"} />
         <div className="about--content">
           <div className="about--image">
-            <img src="/src/assets/images/about.jpg" alt="about" />
+            <img src="https://i.ibb.co/3Sfr6b5/about.jpg" alt="about" />
           </div>
           <div className="about--text">
             <h3>Lorem ipsum dolor sit.</h3>
@@ -27,7 +27,7 @@ const About = () => {
         </div>
         <div className="about--content">
           <div className="about--image">
-            <img src="/src/assets/images/about.jpg" alt="about" />
+            <img src="https://i.ibb.co/3Sfr6b5/about.jpg" alt="about" />
           </div>
           <div className="about--text">
             <h3>Lorem ipsum dolor sit.</h3>

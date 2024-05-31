@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 
-const FilterCategoryItem = () => {
-  const [activeFillter, setActiveFillter] = useState(false)
+const FilterCategoryItem = ({ categoryData, activeIndex, _id }) => {
   return (
-   <div className={`filterCategory--container ${activeFillter && "active"}`} onClick={() => setActiveFillter(true)}>
+   <div className={`filterCategory--container ${activeIndex == _id && "active"}`}>
     <div className="filter--image">
-      <img src="src\assets\images\Hero-Banner.jpg" alt="aa" />
+      <img src={"http://localhost:1337" + categoryData?.image?.data?.attributes?.url} alt="aa" />
     </div>
-    <span>Lorem, ipsum dolor.</span>
+    <span>{categoryData?.title}</span>
    </div>
   );
 };

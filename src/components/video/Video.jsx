@@ -3,7 +3,9 @@ import React from "react";
 const Video = () => {
   return (
     <section className="video">
-video
+      <div className="play">
+        <span>play</span>
+      </div>
     </section>
   );
 };
